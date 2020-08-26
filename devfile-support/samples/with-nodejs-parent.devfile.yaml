@@ -8,8 +8,8 @@ parent:
       git:
           branch: 'mybranch'
 commands:
-  - exec:
-      id: sayHello
+  - id: sayHello
+    exec:
       label: Say Hello
       commandLine: echo "hello"
       component: nodejs

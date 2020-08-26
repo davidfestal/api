@@ -7,18 +7,19 @@ projects:
       location: "https://github.com/che-incubator/devworkspace-api"
       branch: "master"
 components:
-  - plugin:
+  - name: editor
+    plugin:
       id: eclipse/che-theia/latest
-  - plugin:
-      name: "ownPlugin"
+  - name: "ownPlugin"
+    plugin:
       id: acme/newPlugin/latest
       registryUrl: "https://acme.com/registry/"
-  - plugin:
-      name: "myPlugin"
+  - name: "myPlugin"
+    plugin:
       uri: "https://github.com/johndoe/che-plugins/blob/master/cool-plugin/0.0.1/meta.yaml"
-  - container:
+  - name: "mycontainer"
+    container:
       image: "busybox"
-      name: "mycontainer"
       memoryLimit: "128M"
       mountSources: true
       endpoints:
@@ -28,6 +29,6 @@ components:
           attributes:
             type: terminal
           targetPort: 4000
-  - kubernetes:
-      name: "production"
+  - name: "production"
+    kubernetes:
       uri: "https://somewhere/production-environment.yaml"
